@@ -1,0 +1,67 @@
+<div [ngClass]="{ 'darkNav': themeDark }">
+  <div class="navbar">
+    <a class="logo" routerLink="">
+      <img src="./assets/icons/logo.svg" alt="photo profile">
+    </a>
+    <div>
+      <ul class="nav">
+        <li  class="theme" (click)="changeTheme()">
+          <button>
+            <img [ngClass]="{ 'show-theme': themeDark, 'hide-theme': !themeDark }"
+                  src="./assets/icons/sun.svg" alt="sun icon">
+          </button>
+          <button>
+            <img [ngClass]="{ 'show-theme': !themeDark, 'hide-theme': themeDark! }"
+                  src="./assets/icons/moon.svg" alt="moon icon">
+          </button>
+        </li>
+        <li>
+          <a routerLink="">Inicio</a>
+        </li>
+        <li>
+          <a routerLink="contact">Contacto</a>
+        </li>
+        <li>
+          <a href="#">CV</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="btn-menu-toggle">
+      <div class="theme-responsive" (click)="changeTheme()">
+        <button>
+          <img [ngClass]="{ 'show-theme': themeDark, 'hide-theme': !themeDark }"
+               src="./assets/icons/sun.svg" alt="sun icon">
+        </button>
+        <button>
+          <img [ngClass]="{ 'show-theme': !themeDark, 'hide-theme': themeDark }"
+               src="./assets/icons/moon.svg" alt="moon icon">
+        </button>
+      </div>
+
+      <button (click)="btnToggle()" [ngClass]="{ 'dark-btn': themeDark }">
+        <img class="menu-dark-btn" src="./assets/icons/menu.svg" alt="menu icon">
+        <img class="menu-ligth-btn" src="./assets/icons/menu-ligth.svg" alt="menu icon">
+      </button>
+
+      <div class="menu-responsive"
+           [ngClass]="{ 'menu-in': toggle, 'menu-out': !toggle }">
+        <button class="btn-close-menu" (click)="btnToggle()">
+          <img src="./assets/icons/close.svg" alt="close menu icon">
+        </button>
+        <ul>
+          <li (click)="toggleClickPage()">
+            <a routerLink="">Inicio</a>
+          </li>
+          <li (click)="toggleClickPage()">
+            <a routerLink="contact">Contacto</a>
+          </li>
+          <li (click)="toggleClickPage()">
+            <a href="#">CV</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+

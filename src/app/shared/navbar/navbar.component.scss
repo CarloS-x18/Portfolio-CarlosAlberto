@@ -1,0 +1,175 @@
+@import '_shared';
+
+.navbar {
+  padding: 26px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .logo {
+    transition: $transition;
+
+    img {
+      width: 80px;
+    }
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  .nav {
+    list-style: none;
+    display: flex;
+    align-items: center;
+
+    .theme {
+      align-items: center;
+      button {
+        background-color: transparent;
+        border-color: transparent;
+        cursor: pointer;
+        transition: $transition;
+
+        img {
+          width: 34px;
+        }
+
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+    }
+
+    a {
+      padding: 16px;
+      font-size: 1.6rem;
+      text-decoration: none;
+      color: $text-color-light;
+
+      &:hover {
+        color: rgb(139, 139, 139);
+      }
+    }
+
+    @media (max-width: 639px) {
+      display: none;
+    }
+  }
+
+  .btn-menu-toggle {
+    display: flex;
+    align-items: center;
+
+    .theme-responsive {
+      margin-right: 20px;
+
+      button {
+        background-color: transparent;
+        border-color: transparent;
+        cursor: pointer;
+
+        img {
+          width: 50px;
+        }
+      }
+
+      @media (min-width: 640px) {
+        display: none;
+      }
+    }
+
+    button {
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+
+      .show-icon {
+        display: block;
+      }
+      .hide-icon {
+        display: none;
+      }
+
+      img {
+        width: 60px;
+      }
+
+      .menu-dark-btn {
+        display: none;
+      }
+    }
+
+    .dark-btn .menu-dark-btn {
+      display: block;
+    }
+    .dark-btn .menu-ligth-btn {
+      display: none;
+    }
+
+    .menu-responsive {
+      position: fixed;
+      z-index: 100;
+      left: 0;
+      top: 0;
+      width: 100vw;
+      height: 100vh;
+      display: grid;
+      place-content: center;
+      background-color: #0f1216;
+      transition: $transition;
+
+      .btn-close-menu {
+        position: absolute;
+        top: 40px;
+        right: 24px;
+      }
+
+      ul {
+        list-style: none;
+        text-align: center;
+        display: grid;
+        gap: 30px;
+
+        a {
+          font-size: 2.4rem;
+          font-weight: 500;
+          text-decoration: none;
+          color: white;
+        }
+      }
+    }
+
+    .menu-in {
+      transform: translate(0);
+    }
+    .menu-out {
+      transform: translate(-100%);
+    }
+
+    @media (min-width: 640px) {
+      display: none;
+    }
+  }
+
+  .show-theme {
+    display: block;
+  }
+  .hide-theme {
+    display: none;
+  }
+}
+
+.darkNav .navbar {
+  .nav {
+    a {
+      color: $text-color-dark;
+
+      &:hover {
+        color: rgb(139, 139, 139);
+      }
+    }
+  }
+}
+
+

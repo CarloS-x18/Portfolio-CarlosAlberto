@@ -1,0 +1,44 @@
+<div [ngClass]="{ 'dark-main': themeDark }">
+  <div class="header">
+    <h1>Hola soy <span class="text__green">Carlos Escobedo</span>, desarrollador web Front-end en <span class="text__red">Angular</span> <span class="emoji">✌️</span></h1>
+    <img src="./assets/img/profile.png" alt="photo profile ">
+  </div>
+
+  <div class="projects-container">
+    <h2>Proyectos 📂</h2>
+    <hr>
+
+    <div class="projects">
+      <div class="card-project" *ngFor="let project of projects">
+        <app-card-project [project]="project"></app-card-project>
+      </div>
+    </div>
+  </div>
+
+  <div class="about-container">
+    <h2>Sobre Mí 🙋‍♂️</h2>
+    <hr>
+
+    <div class="about-text">
+      <p>He sido un apacionado de la tecnología desde que tengo memoria, hace dos años que comence en el mundo del desarrollo de software, en específico el desarrollo web front-end. 💻</p>
+      <p>Actualmente me estoy formando en Angular, y de esta manera poder ser parte de alguna startup que me permita desarrollarme de la mejor manera posible para seguir creciendo como developer. 👨‍💻</p>
+    </div>
+
+  </div>
+
+  <div class="skills-container">
+    <h2>Habilidades 🛠️</h2>
+    <hr>
+
+    <div class="skills">
+      <div class="skill {{ item.technology }}" *ngFor="let item of skills">
+        <img [src]="item.img_URL" alt="icon {{ item.technology }}">
+        <span>
+          {{ item.technology | uppercase }}
+        </span>
+      </div>
+    </div>
+  </div>
+
+
+</div>

@@ -1,0 +1,28 @@
+@import '_shared';
+
+footer {
+  height: 100px;
+  margin-top: 50px;
+  padding: 0 30px;
+  display: grid;
+  place-content: center;
+  background-color: rgb(255, 255, 255);
+
+  p {
+    text-align: center;
+    color: $text-color-card-light;
+    font-size: 1.8rem;
+
+    @media (max-width: 640px) {
+      font-size: 1.4rem;
+    }
+  }
+}
+
+.dark-footer {
+  background-color: #141820;
+
+  p {
+    color: $text-color-card-dark;
+  }
+}

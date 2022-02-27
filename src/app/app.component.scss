@@ -1,0 +1,19 @@
+@import '_shared';
+
+.container {
+  min-height: 100vh;
+  background-color: $bg-body-light;
+
+  .principal-container {
+    max-width: 1024px;
+    margin: 0 auto;
+
+    @media (max-width: 1080px) {
+      padding: 0 30px;
+    }
+  }
+}
+
+.dark .container {
+  background-color: $bg-body-dark;
+}

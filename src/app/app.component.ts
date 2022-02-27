@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { PortfolioService } from './services/portfolio.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'portfolio';
+
+  get themeDark() {
+    return this.pS.themeDark;
+  }
+
+  constructor( private pS: PortfolioService ) {}
+
 }

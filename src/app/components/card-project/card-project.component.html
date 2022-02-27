@@ -1,0 +1,24 @@
+<div [ngClass]="{'dark-card': themeDark}">
+  <div class="card-project">
+    <div class="project-text">
+      <h3>{{ project.name }}</h3>
+      <p>{{ project.description }}</p>
+    </div>
+    <div class="project-buttons">
+      <a [href]="project.repository_URL"
+         class="btn__github">
+        Repo
+        <span>
+          <img src="./assets/icons/github.svg" alt="github icon">
+        </span>
+      </a>
+      <a [href]="project.demo_URL "
+         class="btn__demo">
+        Demo
+        <span>
+          <img src="./assets/icons/web.svg" alt="web icon">
+        </span>
+      </a>
+    </div>
+  </div>
+</div>
