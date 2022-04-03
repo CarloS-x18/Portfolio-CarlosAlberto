@@ -44,11 +44,11 @@
     }
 
     .btn__github {
-      background-color: #d9b779;
+      background-color: #ffcd70;
     }
 
     .btn__demo {
-      background-color: #739dbf;
+      background-color: #7ec1f8;
     }
   }
 
@@ -61,6 +61,15 @@
 
     .project-text {
       color: $text-color-card-dark;
+    }
+    .project-buttons {
+      .btn__github {
+        background-color: #e6be76;
+      }
+
+      .btn__demo {
+        background-color: #72a9d6;
+      }
     }
   }
 }

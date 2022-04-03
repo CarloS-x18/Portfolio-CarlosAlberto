@@ -1,12 +1,14 @@
 @import '_shared';
 
 footer {
+  position: absolute;
+  bottom: 0;
   height: 100px;
-  margin-top: 50px;
+  width: 100%;
   padding: 0 30px;
   display: grid;
   place-content: center;
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(236, 236, 236);
 
   p {
     text-align: center;

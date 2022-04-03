@@ -3,7 +3,16 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  firebase: {
+    projectId: 'dataportfoliocontact',
+    appId: '1:23343593418:web:2b4192097b75059f504133',
+    storageBucket: 'dataportfoliocontact.appspot.com',
+    locationId: 'us-central',
+    apiKey: 'AIzaSyAOcvNIKghZbS-EGj0nKEglAMlQe8O7XYw',
+    authDomain: 'dataportfoliocontact.firebaseapp.com',
+    messagingSenderId: '23343593418',
+  }
 };
 
 /*

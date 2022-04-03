@@ -1,11 +1,13 @@
 import { Injectable } from '@angular/core';
-import { Project, Skill } from '../interfaces/porfolio.interfaces';
+import { Project, Skill, Data } from '../interfaces/porfolio.interfaces';
+import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/compat/firestore';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PortfolioService {
 
+  private usersDataCollection!: AngularFirestoreCollection<Data>;
   themeDark: boolean = true;
 
   projects: Project[] = [
@@ -26,6 +28,18 @@ export class PortfolioService {
       description: 'Gestor de tareas que permite agregarlas y borrarlas, junto con la coleccion de  tareas completadas.',
       repository_URL: 'https://github.com/CarloS-x18/todoApp',
       demo_URL: 'https://appangular-todo.netlify.app/'
+    },
+    {
+      name: 'WikiSearchApp',
+      description: 'Buscador de definiciones o palabras que retorna artículos de wikipedia como respuestas.',
+      repository_URL: 'https://github.com/CarloS-x18/wikiSearchApp',
+      demo_URL: 'https://search-wiki-app.netlify.app/'
+    },
+    {
+      name: 'AuthFireApp',
+      description: 'Autenticación integrada con Firebase, permite hacer registro con email y password e iniciar sesion con Google.',
+      repository_URL: 'https://github.com/CarloS-x18/authFireApp',
+      demo_URL: 'https://authfireapp.netlify.app/auth/login'
     }
   ]
 
@@ -67,10 +81,6 @@ export class PortfolioService {
       img_URL: './assets/icons/skills/webpack.svg'
     },
     {
-      technology: 'mongodb',
-      img_URL: './assets/icons/skills/mongodb.svg'
-    },
-    {
       technology: 'postman',
       img_URL: './assets/icons/skills/postman.svg'
     },
@@ -88,5 +98,21 @@ export class PortfolioService {
     },
   ];
 
-  constructor() { }
+  constructor( private readonly afs: AngularFirestore ) {
+    this.usersDataCollection = afs.collection<Data>('usersData');
+  }
+
+  onSaveData( userData: Data ) {
+    return new Promise( async (resolve, reject) => {
+      try {
+        const id = this.afs.createId();
+        const data = { id, ...userData };
+        const result = this.usersDataCollection.doc(id).set(data);
+        resolve(result);
+      } catch (err) {
+        reject(err)
+      }
+    });
+  }
+
 }

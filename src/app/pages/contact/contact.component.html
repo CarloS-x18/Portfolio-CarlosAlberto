@@ -1,1 +1,82 @@
-<p>contact works!</p>
+<div [ngClass]="{ 'dark': themeDark }">
+  <div class="contact-container">
+    <div class="contact__form">
+      <h2>Contactame</h2>
+      <form [formGroup]="form"
+            (ngSubmit)="submitForm()"
+            autocomplete="off">
+        <div class="input-container">
+          <label for="name">
+            *Nombre
+            <input id="name"
+                   type="text"
+                   formControlName="name">
+          </label>
+          <span *ngIf="errorField('name')">
+            Este campo debe contener más de 8 caracteres.
+          </span>
+        </div>
+        <div class="input-container">
+          <label for="email">
+            *Email
+            <input id="email"
+                   type="email"
+                   formControlName="email">
+          </label>
+          <span *ngIf="errorField('email')">
+            {{ emailErrorMsg }}
+          </span>
+        </div>
+        <div class="input-container">
+          <label for="tel">
+            Whatsapp
+            <input id="tel"
+                   type="tel"
+                   formControlName="tel">
+          </label>
+          <span *ngIf="errorField('tel')">
+            Este número de telefono no es valido.
+          </span>
+        </div>
+        <div class="input-container">
+          <label for="message">
+            *Mensaje
+            <textarea id="message"
+                      formControlName="message">
+            </textarea>
+          </label>
+          <span *ngIf="errorField('message')">
+            Este campo requiere más de 15 caracteres.
+          </span>
+        </div>
+        <div class="submit">
+          <button type="submit">
+            Enviar
+          </button>
+        </div>
+      </form>
+    </div>
+    <div class="contact__socials">
+      <ul>
+        <li>
+          <a href="https://twitter.com/devcarlos_">
+            <span>@devcarlos_</span>
+            <img src="./assets/icons/twitter.svg" alt="icon twitter">
+          </a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/in/carlo5albert0/">
+            <span>Carlos Escobedo</span>
+            <img src="./assets/icons/linkedin.svg" alt="icon twitter">
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/CarloS-x18">
+            <span>CarloS-x18</span>
+            <img src="./assets/icons/github-white.svg" alt="icon twitter">
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

@@ -3,13 +3,18 @@
 $bg-body-dark: #11151c;
 $bg-card-dark: #161c24;
 $bg-hr-dark: #222c3f;
+$bg-input-dark: #191e28;
 $text-color-dark: rgb(228, 228, 228);
 $text-color-card-dark: #b5b5b5;
 /* Light Theme */
 $bg-body-light: white;
 $bg-card-light: #f8f8f8;
 $bg-hr-light: rgb(235, 235, 235);
-$text-color-light: rgba(17,24,39,1);;
+$bg-input-light: #dfdfdf;
+$text-color-light: rgba(17,24,39,1);
 $text-color-card-light: #646464;
 
+$font: 'Inter', sans-serif;
+
 $transition: all 0.3s linear;
+

@@ -1,5 +1,9 @@
 @import '_shared';
 
+.home-container {
+  padding-bottom: 150px;
+}
+
 .header {
   padding: 50px 0;
   display: flex;
@@ -9,10 +13,10 @@
   transition: $transition;
 
   h1 {
-    text-align: center;
     color: $text-color-light;
     font-size: 2rem;
     font-weight: 400;
+    text-align: center;
 
     .text__red {
       color: rgb(255, 56, 56);
@@ -26,8 +30,13 @@
   }
 
   @media (min-width: 640px) {
+    padding: 150px 0;
     flex-direction: row;
     justify-content: center;
+
+    &:hover {
+      transform: scale(1.02);
+    }
 
     h1 {
       max-width: 440px;
@@ -35,15 +44,8 @@
       font-size: 2.6rem;
     }
   }
-
-  @media (min-width: 640px) {
-    padding: 150px 0;
-
-    &:hover {
-      transform: scale(1.02);
-    }
-  }
 }
+
 .about-container {
   margin-bottom: 50px;
 
@@ -76,7 +78,6 @@
   @media (min-width: 640px) {
     margin-bottom: 80px;
   }
-
 }
 .projects-container {
   margin-bottom: 50px;
@@ -140,12 +141,16 @@
     .skill {
       padding: 6px 10px;
       display: flex;
-      gap: 10px;
       align-items: center;
+      gap: 10px;
       border-radius: 3px;
       box-shadow: 0px 10px 15px -2px rgba(0,0,0,0.1);
       transition: $transition;
       cursor: pointer;
+
+      &:hover {
+        transform: scale(1.1);
+      }
 
       img {
         width: 25px;
@@ -155,9 +160,6 @@
         font-size: 1.2rem;
       }
 
-      &:hover {
-        transform: scale(1.1);
-      }
     }
 
     .html {

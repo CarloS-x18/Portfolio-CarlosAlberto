@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Project } from 'src/app/interfaces/porfolio.interfaces';
 import { PortfolioService } from '../../services/portfolio.service';
 import { Skill } from '../../interfaces/porfolio.interfaces';
@@ -8,7 +8,7 @@ import { Skill } from '../../interfaces/porfolio.interfaces';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent {
 
   get themeDark() {
     return this.portfolioService.themeDark;
@@ -23,8 +23,5 @@ export class HomeComponent implements OnInit {
   }
 
   constructor( private portfolioService: PortfolioService ) { }
-
-  ngOnInit(): void {
-  }
 
 }

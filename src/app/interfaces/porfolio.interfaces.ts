@@ -10,3 +10,10 @@ export interface Skill {
   technology: string;
   img_URL: string;
 }
+
+export interface Data {
+  name: string;
+  email: string;
+  tel: string;
+  message: string;
+}
